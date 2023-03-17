@@ -94,7 +94,7 @@ return network.registerProtocol('ncm', {
 				return true;
 
 			if (!/^[a-zA-Z0-9\-.]*[a-zA-Z0-9]$/.test(value))
-					return _('Invalid APN provided');
+				return _('Invalid APN provided');
 
 			return true;
 		};
@@ -102,9 +102,22 @@ return network.registerProtocol('ncm', {
 		o = s.taboption('general', form.Value, 'pincode', _('PIN'));
 		o.datatype = 'and(uinteger,minlength(4),maxlength(8))';
 
-		s.taboption('general', form.Value, 'username', _('PAP/CHAP username'));
+		o = s.taboption('general', form.ListValue, 'auth', _('Authentication Type'));
+		o.value('both', 'PAP/CHAP');
+		o.value('pap', 'PAP');
+		o.value('chap', 'CHAP');
+		o.value('none', 'NONE');
+		o.default = 'none';
+
+		o = s.taboption('general', form.Value, 'username', _('PAP/CHAP username'));
+		o.depends('auth', 'pap');
+		o.depends('auth', 'chap');
+		o.depends('auth', 'both');
 
 		o = s.taboption('general', form.Value, 'password', _('PAP/CHAP password'));
+		o.depends('auth', 'pap');
+		o.depends('auth', 'chap');
+		o.depends('auth', 'both');
 		o.password = true;
 
 		if (L.hasSystemFeature('ipv6')) {
@@ -118,6 +131,6 @@ return network.registerProtocol('ncm', {
 
 		o = s.taboption('advanced', form.Value, 'delay', _('Modem init timeout'), _('Amount of seconds to wait for the modem to become ready'));
 		o.placeholder = '0';
-		o.datatype  = 'min(0)';
+		o.datatype = 'min(0)';
 	}
 });
