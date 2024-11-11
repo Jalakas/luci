@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-22 19:53+0000\n"
-"Last-Translator: Simona Iacob <s@zp1.net>\n"
+"PO-Revision-Date: 2023-04-23 07:04+0000\n"
+"Last-Translator: olimpiumarius <oliver_magnum44@yahoo.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationswifischedule/ro/>\n"
 "Language: ro\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:81
 msgid "Activate wifi"
@@ -23,10 +23,6 @@ msgstr ""
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:244
 msgid "Could not find required program /usr/bin/iwinfo"
 msgstr "Nu a putut găsi programul necesar /usr/bin/iwinfo"
-
-#: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:45
-msgid "Cron Jobs"
-msgstr "Locuri de muncă Cron"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:154
 msgid "Day(s) of Week"
@@ -50,7 +46,7 @@ msgstr "Oprește wifi-ul forțat - deconectând clienții conectați"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:148
 msgid "Enable"
-msgstr "Activați"
+msgstr "Activează"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:55
 msgid "Enable Wifi Schedule"
@@ -83,10 +79,6 @@ msgstr "Luni"
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:162
 msgid "Saturday"
 msgstr "Sâmbătă"
-
-#: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:31
-msgid "Schedule"
-msgstr "Temporizare/program"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:142
 msgid "Schedule events"
@@ -128,14 +120,6 @@ msgstr "Marţi"
 msgid "Unload Modules (experimental; saves more power)"
 msgstr "Descărcarea modulelor (experimental; economisește mai multă energie)"
 
-#: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:33
-msgid "View Cron Jobs"
-msgstr "Vezi locuri de muncă Cron"
-
-#: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:32
-msgid "View Logfile"
-msgstr "Vezi fișierul log"
-
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:159
 msgid "Wednesday"
 msgstr "Miercuri"
@@ -145,6 +129,17 @@ msgstr "Miercuri"
 msgid "Wifi Schedule"
 msgstr "Temporizarea WiFi"
 
-#: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:39
-msgid "Wifi Schedule Logfile"
-msgstr "Fișierul log al temporizării Wifi"
+#~ msgid "Cron Jobs"
+#~ msgstr "Locuri de muncă Cron"
+
+#~ msgid "Schedule"
+#~ msgstr "Temporizare/program"
+
+#~ msgid "View Cron Jobs"
+#~ msgstr "Vezi locuri de muncă Cron"
+
+#~ msgid "View Logfile"
+#~ msgstr "Vezi fișierul log"
+
+#~ msgid "Wifi Schedule Logfile"
+#~ msgstr "Fișierul log al temporizării Wifi"
