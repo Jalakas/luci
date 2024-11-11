@@ -22,7 +22,7 @@ function rule_proto_txt(s, ctHelpers) {
 		};
 	});
 
-	m = String(uci.get('firewall', s, 'helper') || '').match(/^(!\s*)?(\S+)$/);
+	var m = String(uci.get('firewall', s, 'helper') || '').match(/^(!\s*)?(\S+)$/);
 	var h = m ? {
 		val:  m[0].toUpperCase(),
 		inv:  m[1],
@@ -325,6 +325,9 @@ return view.extend({
 		o.value('mobile-prefix-advertisement'); /* icmpv6 147 */
 		o.value('mobile-prefix-solicitation'); /* icmpv6 146 */
 		o.value('mpl-control-message'); /* icmpv6 159 */
+		o.value('multicast-listener-query'); /* icmpv6 130 */
+		o.value('multicast-listener-report'); /* icmpv6 131 */
+		o.value('multicast-listener-done'); /* icmpv6 132 */
 		o.value('multicast-router-advertisement'); /* icmpv6 151 */
 		o.value('multicast-router-solicitation'); /* icmpv6 152 */
 		o.value('multicast-router-termination'); /* icmpv6 153 */
@@ -370,6 +373,14 @@ return view.extend({
 		o.nocreate = true;
 		o.allowany = true;
 		o.allowlocal = 'src';
+
+		o = s.taboption('advanced', form.Value, 'ipset', _('Use ipset'));
+		uci.sections('firewall', 'ipset', function(s) {
+			if (typeof(s.name) == 'string')
+				o.value(s.name, s.comment ? '%s (%s)'.format(s.name, s.comment) : s.name);
+		});
+		o.modalonly = true;
+		o.rmempty = true;
 
 		fwtool.addMACOption(s, 'advanced', 'src_mac', _('Source MAC address'), null, hosts);
 		fwtool.addIPOption(s, 'general', 'src_ip', _('Source address'), null, '', hosts, true);
